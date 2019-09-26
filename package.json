@@ -1,0 +1,59 @@
+{
+  "name": "sort-with-exclusions",
+  "version": "1.0.1",
+  "description": "Sort that allows you to exclude elements from being reordered",
+  "main": "./lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "test": "npm run lint && npm run cover",
+    "test:prod": "cross-env BABEL_ENV=production npm run test",
+    "test:only": "mocha --require babel-core/register --require babel-polyfill --recursive",
+    "test:watch": "npm run test:only -- --watch",
+    "cover": "nyc --check-coverage npm run test:only",
+    "lint": "eslint src test",
+    "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
+    "prepublish": "npm run clean && npm run lint && npm run test && npm run build",
+    "prettier-watch": "onchange 'src/**/*.js' 'test/**/*.js' -- prettier --single-quote --write {{changed}}"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andylhansen/sort-with-exclusions.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "npm",
+    "module",
+    "node",
+    "javascript"
+  ],
+  "author": "Andy Hansen <andylhansen@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andylhansen/sort-with-exclusions/issues"
+  },
+  "homepage": "https://github.com/andylhansen/sort-with-exclusions#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-minify": "^0.5.0",
+    "chai": "^4.1.2",
+    "cross-env": "^5.1.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "mocha": "^6.1.3",
+    "nyc": "^13.3.0",
+    "onchange": "^6.1.0",
+    "prettier": "^1.18.2",
+    "rimraf": "^2.6.2"
+  }
+}
