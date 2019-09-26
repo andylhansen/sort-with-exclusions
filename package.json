@@ -1,6 +1,6 @@
 {
   "name": "sort-with-exclusions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Sort that allows you to exclude elements from being reordered",
   "main": "./lib/index.js",
   "scripts": {

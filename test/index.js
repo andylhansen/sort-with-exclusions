@@ -42,6 +42,14 @@ describe('Sort with exclusions', () => {
     expect(result).to.deep.equal([3, 2, 1]);
   });
 
+  it('should sort array with index exclusions', () => {
+    const array = [3, 2, 1];
+
+    const result = sortWithExclusions(array, (_, index) => index === 2);
+
+    expect(result).to.deep.equal([2, 3, 1]);
+  });
+
   it('should sort using comparison function', () => {
     const array = [
       {
